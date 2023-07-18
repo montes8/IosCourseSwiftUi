@@ -15,6 +15,8 @@
 		5245F6E12A65B9CC007E4EBC /* IosCourseSwiftUiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245F6E02A65B9CC007E4EBC /* IosCourseSwiftUiTests.swift */; };
 		5245F6EB2A65B9CC007E4EBC /* IosCourseSwiftUiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245F6EA2A65B9CC007E4EBC /* IosCourseSwiftUiUITests.swift */; };
 		5245F6ED2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245F6EC2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift */; };
+		52AEBFE72A671DAC00EE7775 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AEBFE62A671DAC00EE7775 /* LoginScreen.swift */; };
+		52AEBFEA2A6723C200EE7775 /* DelayedNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AEBFE92A6723C200EE7775 /* DelayedNavigationLink.swift */; };
 		52F95E1B2A6715E30094DCD9 /* background_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F95E1A2A6715E30094DCD9 /* background_splash.png */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		5245F6E62A65B9CC007E4EBC /* IosCourseSwiftUiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosCourseSwiftUiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5245F6EA2A65B9CC007E4EBC /* IosCourseSwiftUiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosCourseSwiftUiUITests.swift; sourceTree = "<group>"; };
 		5245F6EC2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosCourseSwiftUiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		52AEBFE62A671DAC00EE7775 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		52AEBFE92A6723C200EE7775 /* DelayedNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedNavigationLink.swift; sourceTree = "<group>"; };
 		52F95E1A2A6715E30094DCD9 /* background_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_splash.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,8 +102,9 @@
 		5245F6C92A65B9C9007E4EBC /* IosCourseSwiftUi */ = {
 			isa = PBXGroup;
 			children = (
+				52AEBFE82A6723A600EE7775 /* utils */,
+				52AEBFE32A671D2800EE7775 /* presentation */,
 				5245F6CA2A65B9CA007E4EBC /* IosCourseSwiftUiApp.swift */,
-				5245F6CC2A65B9CA007E4EBC /* SplashScreen.swift */,
 				5245F6CE2A65B9CC007E4EBC /* Assets.xcassets */,
 				52F95E1A2A6715E30094DCD9 /* background_splash.png */,
 				5245F6D52A65B9CC007E4EBC /* IosCourseSwiftUi.xcdatamodeld */,
@@ -131,6 +136,39 @@
 				5245F6EC2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift */,
 			);
 			path = IosCourseSwiftUiUITests;
+			sourceTree = "<group>";
+		};
+		52AEBFE32A671D2800EE7775 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				52AEBFE52A671D5E00EE7775 /* login */,
+				52AEBFE42A671D5100EE7775 /* splash */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		52AEBFE42A671D5100EE7775 /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				5245F6CC2A65B9CA007E4EBC /* SplashScreen.swift */,
+			);
+			path = splash;
+			sourceTree = "<group>";
+		};
+		52AEBFE52A671D5E00EE7775 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				52AEBFE62A671DAC00EE7775 /* LoginScreen.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		52AEBFE82A6723A600EE7775 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				52AEBFE92A6723C200EE7775 /* DelayedNavigationLink.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5245F6D72A65B9CC007E4EBC /* IosCourseSwiftUi.xcdatamodeld in Sources */,
+				52AEBFE72A671DAC00EE7775 /* LoginScreen.swift in Sources */,
+				52AEBFEA2A6723C200EE7775 /* DelayedNavigationLink.swift in Sources */,
 				5245F6CD2A65B9CA007E4EBC /* SplashScreen.swift in Sources */,
 				5245F6CB2A65B9CA007E4EBC /* IosCourseSwiftUiApp.swift in Sources */,
 			);
