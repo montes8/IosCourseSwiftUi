@@ -36,7 +36,9 @@ struct SplashScreen: View {
         }
         
     }
-   
+    
+    
+  
 }
 
 
