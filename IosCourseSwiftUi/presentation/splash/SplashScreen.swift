@@ -20,15 +20,7 @@ struct SplashScreen: View {
                 Text("FOOD MERIA").font(.system(size: 25,weight: .bold)).foregroundColor(.white)
                 Text("BIENVENIDOS").font(.system(size: 20,weight: .bold)) .foregroundColor(.white)
                 Text("HAS TU PEDIDO AHORA").font(.system(size: 20,weight: .bold)) .foregroundColor(.white)
-              
-                if splashViewModel != nil{
-                    if splashViewModel.successToken ?? false{
-                        DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
-                   }else{
-                       DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
-                    }
-                }
-              
+                onNextScreem(splashViewModel:splashViewModel)
             }.edgesIgnoringSafeArea(.all).frame(maxWidth: .infinity,maxHeight: .infinity)
                 .background(
                     Image(uiImage: UIImage(named: "background_splash")!)
@@ -38,7 +30,21 @@ struct SplashScreen: View {
         }
         
     }
+    
+
+        func onNextScreem(splashViewModel : SplashViewModel) -> some View {
+             if splashViewModel.successToken{
+                 return  DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
+               }else{
+                   return  DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
+                }
+        
+        }
+   
 }
+
+
+
 
 
 

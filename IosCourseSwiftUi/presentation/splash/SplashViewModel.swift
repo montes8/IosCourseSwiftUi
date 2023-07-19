@@ -12,7 +12,7 @@ class  SplashViewModel :ObservableObject{
     
 
     
-    @Published var successToken : Bool? = nil
+    @Published var successToken : Bool = false
     
     init() {
         getTokenTwo()
@@ -23,7 +23,7 @@ class  SplashViewModel :ObservableObject{
     
     func getTokenTwo(){
             self.successToken = AppUseCase.getToke()
-            self.successToken = nil
+            self.successToken = false
     }
     
 }
