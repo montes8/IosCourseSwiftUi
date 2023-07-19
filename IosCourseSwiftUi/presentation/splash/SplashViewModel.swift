@@ -22,8 +22,8 @@ class  SplashViewModel :ObservableObject{
 
     
     func getTokenTwo(){
-            self.successToken = UserDefaults.standard.bool(forKey: "token")
-        
+            self.successToken = AppUseCase.getToke()
+            self.successToken = nil
     }
     
 }
