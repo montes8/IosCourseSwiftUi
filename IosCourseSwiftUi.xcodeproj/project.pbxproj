@@ -20,6 +20,7 @@
 		52CCCD972A6826DB00A70826 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCCD962A6826DB00A70826 /* SplashViewModel.swift */; };
 		52CCCD9C2A6834F800A70826 /* AppUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCCD9B2A6834F700A70826 /* AppUseCase.swift */; };
 		52CCCD9F2A68354B00A70826 /* ManagerUserDefaultt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCCD9E2A68354B00A70826 /* ManagerUserDefaultt.swift */; };
+		52CCCDAB2A68593000A70826 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCCDAA2A68593000A70826 /* HomeView.swift */; };
 		52F95E1B2A6715E30094DCD9 /* background_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F95E1A2A6715E30094DCD9 /* background_splash.png */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		52CCCD962A6826DB00A70826 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		52CCCD9B2A6834F700A70826 /* AppUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUseCase.swift; sourceTree = "<group>"; };
 		52CCCD9E2A68354B00A70826 /* ManagerUserDefaultt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerUserDefaultt.swift; sourceTree = "<group>"; };
+		52CCCDAA2A68593000A70826 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		52F95E1A2A6715E30094DCD9 /* background_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_splash.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 		52AEBFE32A671D2800EE7775 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				52CCCDA92A68591700A70826 /* home */,
 				52AEBFE52A671D5E00EE7775 /* login */,
 				52AEBFE42A671D5100EE7775 /* splash */,
 			);
@@ -210,6 +213,14 @@
 				52CCCD9E2A68354B00A70826 /* ManagerUserDefaultt.swift */,
 			);
 			path = userdefault;
+			sourceTree = "<group>";
+		};
+		52CCCDA92A68591700A70826 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				52CCCDAA2A68593000A70826 /* HomeView.swift */,
+			);
+			path = home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CCCDAB2A68593000A70826 /* HomeView.swift in Sources */,
 				5245F6D72A65B9CC007E4EBC /* IosCourseSwiftUi.xcdatamodeld in Sources */,
 				52AEBFE72A671DAC00EE7775 /* LoginScreen.swift in Sources */,
 				52AEBFEA2A6723C200EE7775 /* DelayedNavigationLink.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 class ManagerUserDefaultt {
     
     static func getToken() -> Bool {
-        return UserDefaults.standard.bool(forKey: "toke")
+        return UserDefaults.standard.bool(forKey: "token")
     }
     
     static func saveToken(token: Bool) {

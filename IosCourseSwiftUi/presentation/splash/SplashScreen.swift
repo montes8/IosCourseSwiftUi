@@ -10,7 +10,6 @@ import CoreData
 
 struct SplashScreen: View {
     
-    @State var nextLogin : Bool = false
     
     @ObservedObject var splashViewModel = SplashViewModel()
     
@@ -20,7 +19,14 @@ struct SplashScreen: View {
                 Text("FOOD MERIA").font(.system(size: 25,weight: .bold)).foregroundColor(.white)
                 Text("BIENVENIDOS").font(.system(size: 20,weight: .bold)) .foregroundColor(.white)
                 Text("HAS TU PEDIDO AHORA").font(.system(size: 20,weight: .bold)) .foregroundColor(.white)
-                onNextScreem(splashViewModel:splashViewModel)
+              
+                if splashViewModel.successToken{
+                      DelayedNavigationLink(delay: .seconds(3)) {HomeView()}
+                  }else{
+                     DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
+                   }
+                
+                
             }.edgesIgnoringSafeArea(.all).frame(maxWidth: .infinity,maxHeight: .infinity)
                 .background(
                     Image(uiImage: UIImage(named: "background_splash")!)
@@ -30,16 +36,6 @@ struct SplashScreen: View {
         }
         
     }
-    
-
-        func onNextScreem(splashViewModel : SplashViewModel) -> some View {
-             if splashViewModel.successToken{
-                 return  DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
-               }else{
-                   return  DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
-                }
-        
-        }
    
 }
 
