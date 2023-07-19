@@ -17,6 +17,7 @@
 		5245F6ED2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245F6EC2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift */; };
 		52AEBFE72A671DAC00EE7775 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AEBFE62A671DAC00EE7775 /* LoginScreen.swift */; };
 		52AEBFEA2A6723C200EE7775 /* DelayedNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AEBFE92A6723C200EE7775 /* DelayedNavigationLink.swift */; };
+		52CCCD972A6826DB00A70826 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCCD962A6826DB00A70826 /* SplashViewModel.swift */; };
 		52F95E1B2A6715E30094DCD9 /* background_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F95E1A2A6715E30094DCD9 /* background_splash.png */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		5245F6EC2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosCourseSwiftUiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		52AEBFE62A671DAC00EE7775 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		52AEBFE92A6723C200EE7775 /* DelayedNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedNavigationLink.swift; sourceTree = "<group>"; };
+		52CCCD962A6826DB00A70826 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		52F95E1A2A6715E30094DCD9 /* background_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_splash.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				5245F6CC2A65B9CA007E4EBC /* SplashScreen.swift */,
+				52CCCD962A6826DB00A70826 /* SplashViewModel.swift */,
 			);
 			path = splash;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				5245F6D72A65B9CC007E4EBC /* IosCourseSwiftUi.xcdatamodeld in Sources */,
 				52AEBFE72A671DAC00EE7775 /* LoginScreen.swift in Sources */,
 				52AEBFEA2A6723C200EE7775 /* DelayedNavigationLink.swift in Sources */,
+				52CCCD972A6826DB00A70826 /* SplashViewModel.swift in Sources */,
 				5245F6CD2A65B9CA007E4EBC /* SplashScreen.swift in Sources */,
 				5245F6CB2A65B9CA007E4EBC /* IosCourseSwiftUiApp.swift in Sources */,
 			);

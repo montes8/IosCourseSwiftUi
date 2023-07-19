@@ -12,6 +12,8 @@ struct SplashScreen: View {
     
     @State var nextLogin : Bool = false
     
+    @ObservedObject var splashViewModel = SplashViewModel()
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
@@ -21,13 +23,21 @@ struct SplashScreen: View {
                     LoginScreen(title: "Hola login")
                 })
                 
-                NavigationLink(destination: LoginScreen(title: "Hola login")){
+                NavigationLink(destination: LoginScreen(title: "Hola login"),isActive: $nextLogin){
                     Text("BIENVENIDOS").font(.system(size: 20,weight: .bold)) .foregroundColor(.white)
                 }
                 
               
                 Text("HAS TU PEDIDO AHORA").font(.system(size: 20,weight: .bold)) .foregroundColor(.white)
                // DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
+                //if splashViewModel != nil{
+                //    if splashViewModel.successToken ?? false{
+                //        DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
+                //   }else{
+                //       DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
+                //    }
+                // }
+              
             }.edgesIgnoringSafeArea(.all).frame(maxWidth: .infinity,maxHeight: .infinity)
                 .background(
                     Image(uiImage: UIImage(named: "background_splash")!)
@@ -37,6 +47,8 @@ struct SplashScreen: View {
         }
         
     }
+   
+        
        
 }
 
