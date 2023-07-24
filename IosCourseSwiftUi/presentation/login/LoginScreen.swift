@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginScreen: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
         
     let placeHolder: String = "usuario"
     @State var textValue: String = "2345678"
@@ -26,7 +27,8 @@ struct LoginScreen: View {
                 TextInputLayout(hint: placeHolder, textValue: $textValue)
                 TextInputLayout(hint: placeHolderPass, textValue: $textValuePass)
                 Button("Iniciar Sesiòn") {
-                    viewModel.validateUser(user: textValue, pass: textValuePass,context: managedObjectContext)
+                    presentationMode.wrappedValue.dismiss()
+                  //  viewModel.validateUser(user: textValue, pass: textValuePass,context: managedObjectContext)
                 }
                 
             }.padding(20)

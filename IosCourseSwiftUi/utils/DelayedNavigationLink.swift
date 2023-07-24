@@ -14,6 +14,7 @@ struct DelayedNavigationLink<Destination: View, Label: View>: View {
     private let delay: DispatchTimeInterval
     private var destination: () -> Destination
     private var label: () -> Label
+    @Environment(\.dismiss) private var dismiss
 
     init(delay: DispatchTimeInterval, destination: @escaping () -> Destination) where Label == EmptyView {
         self.init(delay: delay, destination: destination, label: EmptyView.init)
