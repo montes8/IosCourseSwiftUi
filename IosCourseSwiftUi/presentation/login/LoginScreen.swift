@@ -10,7 +10,6 @@ import SwiftUI
 struct LoginScreen: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
         
     let placeHolder: String = "usuario"
     @State var textValue: String = "2345678"
@@ -18,7 +17,7 @@ struct LoginScreen: View {
     let placeHolderPass: String = "contraseña"
     @State var textValuePass: String = "**************"
     
-    @StateObject var viewModel: LoginViewModel = LoginViewModel()
+    @ObservedObject var viewModel: LoginViewModel = LoginViewModel()
     
     var body: some View {
         NavigationView{
@@ -27,9 +26,23 @@ struct LoginScreen: View {
                 TextInputLayout(hint: placeHolder, textValue: $textValue)
                 TextInputLayout(hint: placeHolderPass, textValue: $textValuePass)
                 Button("Iniciar Sesiòn") {
-                    presentationMode.wrappedValue.dismiss()
-                  //  viewModel.validateUser(user: textValue, pass: textValuePass,context: managedObjectContext)
-                }
+                    viewModel.validateUser(user: textValue, pass: textValuePass,context: managedObjectContext)
+                }.padding(12).background(Color.blue) // If you have this
+                    .cornerRadius(25).foregroundColor(.white)
+                
+                Button("Crear Cuenta") {
+                    viewModel.nextRegister()
+                    print("click regitro")
+                }// If you have this
+                .cornerRadius(25).foregroundColor(.blue)
+                if viewModel.appEventLogin == LoginEvent.Register {
+                              DelayedNavigationLink(delay: .seconds(0)) {RegisterScreem()}
+                    
+                          }else if viewModel.appEventLogin == LoginEvent.Home {
+                             
+                              DelayedNavigationLink(delay: .seconds(0)) {HomeScreem()}
+                            
+                          }
                 
             }.padding(20)
                 .alert(isPresented: $viewModel.showingAlert, content: {
@@ -39,21 +52,13 @@ struct LoginScreen: View {
                                     print("El user ha pulsado el botón de Aceptar")
                                   }),
                                   secondaryButton: .destructive(Text("Cancelar")))
-                        })
+                })
             
-            if viewModel.appEventLogin == LoginEvent.Home {
-                DelayedNavigationLink(delay: .seconds(0)) {HomeScreem()}
-            }else if viewModel.appEventLogin == LoginEvent.Register {
-                DelayedNavigationLink(delay: .seconds(0)) {HomeScreem()}
-            }
-           
-            
-        }.navigationTitle("Hola login").navigationBarBackButtonHidden(true)
+          
+                     
+        }.navigationTitle("Login").navigationBarBackButtonHidden(true)
         
     }
-    
-  
-      
 }
 
 func TextInputLayout(hint : String,textValue: Binding<String>) -> some View{
