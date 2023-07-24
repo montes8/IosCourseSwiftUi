@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LoginScreen: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
         
     let placeHolder: String = "usuario"
     @State var textValue: String = "2345678"
@@ -15,14 +17,34 @@ struct LoginScreen: View {
     let placeHolderPass: String = "contraseña"
     @State var textValuePass: String = "**************"
     
+    @StateObject var viewModel: LoginViewModel = LoginViewModel()
+    
     var body: some View {
         NavigationView{
             
             VStack(spacing: 20) {
                 TextInputLayout(hint: placeHolder, textValue: $textValue)
                 TextInputLayout(hint: placeHolderPass, textValue: $textValuePass)
+                Button("Iniciar Sesiòn") {
+                    viewModel.validateUser(user: textValue, pass: textValuePass,context: managedObjectContext)
+                }
                 
             }.padding(20)
+                .alert(isPresented: $viewModel.showingAlert, content: {
+                            Alert(title: Text("Aplicación Prueba"),
+                                  message: Text("Ocurrio un error desconocido"),
+                                  primaryButton: Alert.Button.default(Text("Aceptar"), action: {
+                                    print("El user ha pulsado el botón de Aceptar")
+                                  }),
+                                  secondaryButton: .destructive(Text("Cancelar")))
+                        })
+            
+            if viewModel.appEventLogin == LoginEvent.Home {
+                DelayedNavigationLink(delay: .seconds(0)) {HomeView()}
+            }else if viewModel.appEventLogin == LoginEvent.Register {
+                DelayedNavigationLink(delay: .seconds(0)) {HomeView()}
+            }
+           
             
         }.navigationTitle("Hola login").navigationBarBackButtonHidden(true)
         
@@ -50,10 +72,6 @@ func TextInputLayout(hint : String,textValue: Binding<String>) -> some View{
 
 struct LoginScreen_Previews: PreviewProvider {
     static var previews: some View {
-       
-        //binding
-                    // LoginScreen(placeHolder : "usuario",textValue: .constant("4565"),
-                    //placeHolderPass : "contraseña",textValuePass: .constant("fgf")
          LoginScreen()
     }
 }

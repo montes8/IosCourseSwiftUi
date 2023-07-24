@@ -21,7 +21,7 @@ struct SplashScreen: View {
                 Text("HAS TU PEDIDO AHORA").font(.system(size: 20,weight: .bold)) .foregroundColor(.white)
               
                 if splashViewModel.successToken{
-                      DelayedNavigationLink(delay: .seconds(3)) {HomeView()}
+                      DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
                   }else{
                      DelayedNavigationLink(delay: .seconds(3)) {LoginScreen()}
                    }

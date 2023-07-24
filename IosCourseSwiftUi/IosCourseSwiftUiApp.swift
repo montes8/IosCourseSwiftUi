@@ -10,9 +10,14 @@ import SwiftUI
 @main
 struct IosCourseSwiftUiApp: App {
    
+    let persistenceController = PersistenceController.shared
+
     var body: some Scene {
         WindowGroup {
-            SplashScreen()
+            SplashScreen().environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
+    
 }
+
+
