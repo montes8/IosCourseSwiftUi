@@ -190,9 +190,17 @@
 			path = manager;
 			sourceTree = "<group>";
 		};
+		52A7CC8D2A6DFA9100F4813D /* register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = register;
+			sourceTree = "<group>";
+		};
 		52AEBFE32A671D2800EE7775 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				52A7CC8D2A6DFA9100F4813D /* register */,
 				52CCCDA92A68591700A70826 /* home */,
 				52AEBFE52A671D5E00EE7775 /* login */,
 				52AEBFE42A671D5100EE7775 /* splash */,
