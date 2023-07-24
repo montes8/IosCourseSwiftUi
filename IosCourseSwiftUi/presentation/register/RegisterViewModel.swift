@@ -22,6 +22,7 @@ class RegisterViewModel : ObservableObject{
     
 
     
+    @MainActor
     func registerUser(user : String,pass : String,context : NSManagedObjectContext) {
         print("logindata "+user + "  " + pass)
         Task {
@@ -42,6 +43,7 @@ class RegisterViewModel : ObservableObject{
             } catch {
                 appEventLogin = .Error
                 showingAlertR = true
+                print(error.localizedDescription)
                 self.errorMesaggeR = "Ocurrio un error en la petición"
             }
     

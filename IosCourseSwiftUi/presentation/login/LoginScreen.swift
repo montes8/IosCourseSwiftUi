@@ -12,10 +12,10 @@ struct LoginScreen: View {
     @Environment(\.managedObjectContext) var managedObjectContext
         
     let placeHolder: String = "usuario"
-    @State var textValue: String = "2345678"
+    @State var textValue: String = "Tayler"
     
     let placeHolderPass: String = "contraseña"
-    @State var textValuePass: String = "**************"
+    @State var textValuePass: String = "Tayler"
     
     @ObservedObject var viewModel: LoginViewModel = LoginViewModel()
     

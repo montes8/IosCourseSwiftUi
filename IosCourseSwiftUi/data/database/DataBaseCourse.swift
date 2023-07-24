@@ -25,6 +25,7 @@ class DataBaseCourse {
                    print("El usuario no esta registrado")
                 }else{
                     completion(data,nil)
+                    ManagerUserDefaultt.saveToken(token: true)
                 }
                
             }catch {
