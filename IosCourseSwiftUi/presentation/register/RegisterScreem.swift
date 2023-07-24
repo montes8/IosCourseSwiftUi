@@ -27,20 +27,18 @@ struct RegisterScreem: View {
                 TextInputLayout(hint: placeHolderR, textValue: $textValueR)
                 TextInputLayout(hint: placeHolderPassR, textValue: $textValuePassR)
                 Button("Registrase") {
-                    presentationMode.wrappedValue.dismiss()
-                   // viewModel.registerUser(user: textValueR, pass: textValuePassR,context: managedObjectContext)
+                    viewModel.registerUser(user: textValueR, pass: textValuePassR,context: managedObjectContext)
                 }.padding(12).background(Color.blue) // If you have this
                     .cornerRadius(25).foregroundColor(.white)
                 
             }.padding(20)
-                .alert(isPresented: $viewModel.showingAlertR, content: {
-                            Alert(title: Text("Aplicación Prueba"),
-                                  message: Text("Ocurrio un error desconocido"),
-                                  primaryButton: Alert.Button.default(Text("Aceptar"), action: {
-                                    print("El user ha pulsado el botón de Aceptar")
-                                  }),
-                                  secondaryButton: .destructive(Text("Cancelar")))
-                        })
+                .alert(viewModel.errorMesaggeR, isPresented: $viewModel.showingAlertR) {
+                            Button("Aceptar", role: .cancel) {
+                                if viewModel.appEventLogin == LoginEvent.Home {
+                                    presentationMode.wrappedValue.dismiss()
+                                }
+                            }
+                        }
             
             
             

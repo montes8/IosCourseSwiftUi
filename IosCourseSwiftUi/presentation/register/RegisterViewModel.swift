@@ -29,6 +29,8 @@ class RegisterViewModel : ObservableObject{
                 UserUseCase.registerUser(user: user, pass: pass, context: context) { success in
                      if success{
                          self.appEventLogin = LoginEvent.Home
+                         self.showingAlertR = true
+                         self.errorMesaggeR = "Usuario  registrado"
                          
                      }else{
                          self.appEventLogin = LoginEvent.Error
