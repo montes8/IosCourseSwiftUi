@@ -40,9 +40,9 @@ struct LoginScreen: View {
                         })
             
             if viewModel.appEventLogin == LoginEvent.Home {
-                DelayedNavigationLink(delay: .seconds(0)) {HomeView()}
+                DelayedNavigationLink(delay: .seconds(0)) {HomeScreem()}
             }else if viewModel.appEventLogin == LoginEvent.Register {
-                DelayedNavigationLink(delay: .seconds(0)) {HomeView()}
+                DelayedNavigationLink(delay: .seconds(0)) {HomeScreem()}
             }
            
             
