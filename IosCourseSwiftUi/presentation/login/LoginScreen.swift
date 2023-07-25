@@ -23,8 +23,33 @@ struct LoginScreen: View {
         NavigationView{
             
             VStack(spacing: 20) {
-                TextInputLayout(hint: placeHolder, textValue: $textValue)
-                TextInputLayout(hint: placeHolderPass, textValue: $textValuePass)
+                
+                ZStack(alignment: .leading) {
+                            Text(placeHolder)
+                                .foregroundColor(Color(.placeholderText))
+                                .offset(y: textValue.isEmpty ? 0 : -25)
+                                .scaleEffect(textValue.isEmpty ? 1: 0.8, anchor: .leading)
+                            TextField("", text: $textValue)
+                        }
+                .padding(.top, textValue.isEmpty ? 0 : 15)
+                        .frame(height: 52)
+                        .padding(.horizontal, 16)
+                        .overlay(RoundedRectangle(cornerRadius: 12).stroke(lineWidth: 1).foregroundColor(.gray))
+                        
+                
+                ZStack(alignment: .leading) {
+                            Text(placeHolderPass)
+                                .foregroundColor(Color(.placeholderText))
+                                .offset(y: textValuePass.isEmpty ? 0 : -25)
+                                .scaleEffect(textValuePass.isEmpty ? 1: 0.8, anchor: .leading)
+                            TextField("", text: $textValuePass)
+                        }
+                .padding(.top, textValue.isEmpty ? 0 : 15)
+                        .frame(height: 52)
+                        .padding(.horizontal, 16)
+                        .overlay(RoundedRectangle(cornerRadius: 12).stroke(lineWidth: 1).foregroundColor(.gray))
+                        
+                
                 Button("Iniciar Sesiòn") {
                     viewModel.validateUser(user: textValue, pass: textValuePass,context: managedObjectContext)
                 }.padding(12).background(Color.blue) // If you have this
@@ -32,8 +57,7 @@ struct LoginScreen: View {
                 
                 Button("Crear Cuenta") {
                     viewModel.nextRegister()
-                    print("click regitro")
-                }// If you have this
+                }
                 .cornerRadius(25).foregroundColor(.blue)
                 if viewModel.appEventLogin == LoginEvent.Register {
                               DelayedNavigationLink(delay: .seconds(0)) {RegisterScreem()}
@@ -60,22 +84,6 @@ struct LoginScreen: View {
         
     }
 }
-
-func TextInputLayout(hint : String,textValue: Binding<String>) -> some View{
-    return ZStack(alignment: .leading) {
-                Text(hint)
-                    .foregroundColor(Color(.placeholderText))
-                    .offset(y: textValue.wrappedValue.isEmpty ? 0 : -25)
-                    .scaleEffect(textValue.wrappedValue.isEmpty ? 1: 0.8, anchor: .leading)
-                TextField("", text: textValue)
-            }
-    .padding(.top, textValue.wrappedValue.isEmpty ? 0 : 15)
-            .frame(height: 52)
-            .padding(.horizontal, 16)
-            .overlay(RoundedRectangle(cornerRadius: 12).stroke(lineWidth: 1).foregroundColor(.gray))
-            .animation(.default)
-}
-                  
 
 struct LoginScreen_Previews: PreviewProvider {
     static var previews: some View {
