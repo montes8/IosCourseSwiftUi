@@ -69,18 +69,14 @@ struct LoginScreen: View {
                           }
                 
             }.padding(20)
-                .alert(isPresented: $viewModel.showingAlert, content: {
-                            Alert(title: Text("Aplicación Prueba"),
-                                  message: Text("Ocurrio un error desconocido"),
-                                  primaryButton: Alert.Button.default(Text("Aceptar"), action: {
-                                    print("El user ha pulsado el botón de Aceptar")
-                                  }),
-                                  secondaryButton: .destructive(Text("Cancelar")))
-                })
+                .alert(viewModel.errorMesagge, isPresented: $viewModel.showingAlert) {
+                    Button("Aceptar", role: .cancel) {
+                    }
+                }
             
           
                      
-        }.navigationTitle("Login").navigationBarBackButtonHidden(true)
+        }.navigationTitle("").navigationBarBackButtonHidden(true)
         
     }
 }

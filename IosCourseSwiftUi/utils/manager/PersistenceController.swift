@@ -9,15 +9,13 @@ import Foundation
 import CoreData
 
 struct PersistenceController {
-    // A singleton for our entire app to use
+    // singleton instancia que se usara en toda la app
     static let shared = PersistenceController()
 
-    // Storage for Core Data
+    // Almacenamiento para datos básicos
     let container: NSPersistentContainer
 
-    // A test configuration for SwiftUI previews
-    // An initializer to load Core Data, optionally able
-    // to use an in-memory store.
+
     init(inMemory: Bool = false) {
     
         container = NSPersistentContainer(name: "IosCourseSwiftUi")

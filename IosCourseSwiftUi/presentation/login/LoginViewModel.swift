@@ -32,15 +32,13 @@ class LoginViewModel : ObservableObject{
         print("logindata "+user + "  " + pass)
         Task {
             do {
-                UserUseCase.validateUser(user: user, pass: pass, context: context) { success in
-                     if success{
-                         self.appEventLogin = LoginEvent.Home
-                         
-                     }else{
-                         self.appEventLogin = LoginEvent.Error
-                         self.showingAlert = true
-                         self.errorMesagge = "Usuario no registrado"
-                     }
+                let response = await UserUseCase.validateUser(user: user, pass: pass, context: context)
+                if response{
+                    self.appEventLogin = LoginEvent.Home
+                }else{
+                    self.appEventLogin = LoginEvent.Error
+                    self.showingAlert = true
+                    self.errorMesagge = "Usuario no registrado"
                 }
             
             } catch {

@@ -13,10 +13,10 @@ struct RegisterScreem: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) var managedObjectContext
     let placeHolderR: String = "usuario"
-    @State var textValueR: String = ""
+    @State var textValueR: String = "Tayler"
     
     let placeHolderPassR: String = "contraseña"
-    @State var textValuePassR: String = ""
+    @State var textValuePassR: String = "Tayler"
     
     @StateObject var viewModel: RegisterViewModel = RegisterViewModel()
     

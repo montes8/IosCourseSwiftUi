@@ -11,8 +11,7 @@ import CoreData
 
 class DataBaseCourse {
     
-    static func validateLogin(context : NSManagedObjectContext,user : String, pass:String,
-                              completion: @escaping ([NSManagedObject]?, String?) -> Void) {
+    static func validateLogin(context : NSManagedObjectContext,user : String, pass:String)async -> Bool {
          let fetchRequest : NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         let query = [NSPredicate(format: "name == %@", user),NSPredicate(format: "password == %@", pass)]
 
@@ -21,16 +20,19 @@ class DataBaseCourse {
                 let data = try context.fetch(fetchRequest)
                 
                if data.isEmpty{
-                   completion(nil,"El usuario no esta registrado")
+                   //completion(nil,"El usuario no esta registrado")
                    print("El usuario no esta registrado")
+                   return false
                 }else{
-                    completion(data,nil)
+                   // completion(data,nil)
                     ManagerUserDefaultt.saveToken(token: true)
+                    return true
                 }
                
             }catch {
                 print(error.localizedDescription)
-                completion(nil,"Ocurrio un error intentalo mas tarde")
+               // completion(nil,"Ocurrio un error intentalo mas tarde")
+                return false
                 print("Ocurrio un error intentalo mas tarde")
             
             }
