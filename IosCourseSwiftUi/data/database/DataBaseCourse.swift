@@ -18,13 +18,14 @@ class DataBaseCourse {
 
         do {
             if !query.isEmpty {fetchRequest.predicate = NSCompoundPredicate(type:.and, subpredicates:query)}
-                var data = try context.fetch(fetchRequest)
+                let data = try context.fetch(fetchRequest)
                 
                if data.isEmpty{
                    completion(nil,"El usuario no esta registrado")
                    print("El usuario no esta registrado")
                 }else{
                     completion(data,nil)
+                    ManagerUserDefaultt.saveToken(token: true)
                 }
                
             }catch {
@@ -35,18 +36,18 @@ class DataBaseCourse {
             }
        }
     
-    static func saveUserEntity(context : NSManagedObjectContext,user : String , pass : String )-> Bool {
+    static func saveUserEntity(context : NSManagedObjectContext,user : String , pass : String ,completion: @escaping (Bool) -> Void){
         let userEntity = UserEntity(context: context)
         userEntity.id = Int16.random(in: 10...20)
         userEntity.name = user
         userEntity.password = pass
         do {
             try context.save()
-            return true
+            completion(true)
         }
         catch {
             print(error.localizedDescription)
-            return false
+            completion(false)
         }
     }
 }

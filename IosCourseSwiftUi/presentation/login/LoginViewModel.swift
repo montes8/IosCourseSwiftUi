@@ -16,10 +16,14 @@ class LoginViewModel : ObservableObject{
     @Published var errorMesagge: String = "Ocurrio un error"
     
    
-    @Published var appEventLogin: LoginEvent = .Register {
+    @Published var appEventLogin: LoginEvent = .Default {
         didSet {
             objectWillChange.send()
         }
+    }
+    
+    func nextRegister(){
+        self.appEventLogin = LoginEvent.Register
     }
     
     
@@ -29,7 +33,6 @@ class LoginViewModel : ObservableObject{
         Task {
             do {
                 UserUseCase.validateUser(user: user, pass: pass, context: context) { success in
-                    
                      if success{
                          self.appEventLogin = LoginEvent.Home
                          
@@ -37,7 +40,6 @@ class LoginViewModel : ObservableObject{
                          self.appEventLogin = LoginEvent.Error
                          self.showingAlert = true
                          self.errorMesagge = "Usuario no registrado"
-                         
                      }
                 }
             
@@ -49,8 +51,6 @@ class LoginViewModel : ObservableObject{
     
         }
     }
-   
-
 }
 
 
@@ -58,4 +58,5 @@ enum LoginEvent {
     case Home
     case Register
     case Error
+    case Default
 }

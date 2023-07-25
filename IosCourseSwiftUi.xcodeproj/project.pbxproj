@@ -20,6 +20,7 @@
 		5245F6E12A65B9CC007E4EBC /* IosCourseSwiftUiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245F6E02A65B9CC007E4EBC /* IosCourseSwiftUiTests.swift */; };
 		5245F6EB2A65B9CC007E4EBC /* IosCourseSwiftUiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245F6EA2A65B9CC007E4EBC /* IosCourseSwiftUiUITests.swift */; };
 		5245F6ED2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245F6EC2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift */; };
+		528A70CB2A6EBB0E00E45CB1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A70CA2A6EBB0E00E45CB1 /* RegisterViewModel.swift */; };
 		52A7CC8C2A6DEDFA00F4813D /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7CC8B2A6DEDFA00F4813D /* PersistenceController.swift */; };
 		52A7CC8F2A6DFAD700F4813D /* RegisterScreem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7CC8E2A6DFAD700F4813D /* RegisterScreem.swift */; };
 		52AEBFE72A671DAC00EE7775 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AEBFE62A671DAC00EE7775 /* LoginScreen.swift */; };
@@ -69,6 +70,7 @@
 		5245F6E62A65B9CC007E4EBC /* IosCourseSwiftUiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosCourseSwiftUiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5245F6EA2A65B9CC007E4EBC /* IosCourseSwiftUiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosCourseSwiftUiUITests.swift; sourceTree = "<group>"; };
 		5245F6EC2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosCourseSwiftUiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		528A70CA2A6EBB0E00E45CB1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		52A7CC8B2A6DEDFA00F4813D /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		52A7CC8E2A6DFAD700F4813D /* RegisterScreem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreem.swift; sourceTree = "<group>"; };
 		52AEBFE62A671DAC00EE7775 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				52A7CC8E2A6DFAD700F4813D /* RegisterScreem.swift */,
+				528A70CA2A6EBB0E00E45CB1 /* RegisterViewModel.swift */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52CCCDAB2A68593000A70826 /* HomeScreem.swift in Sources */,
+				528A70CB2A6EBB0E00E45CB1 /* RegisterViewModel.swift in Sources */,
 				52A7CC8F2A6DFAD700F4813D /* RegisterScreem.swift in Sources */,
 				5245F6D72A65B9CC007E4EBC /* IosCourseSwiftUi.xcdatamodeld in Sources */,
 				52AEBFE72A671DAC00EE7775 /* LoginScreen.swift in Sources */,
