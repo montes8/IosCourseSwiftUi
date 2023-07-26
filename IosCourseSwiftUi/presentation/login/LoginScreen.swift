@@ -24,6 +24,7 @@ struct LoginScreen: View {
             
             VStack(spacing: 20) {
                 
+                //user labeltext
                 ZStack(alignment: .leading) {
                             Text(placeHolder)
                                 .foregroundColor(Color(.placeholderText))
@@ -36,6 +37,7 @@ struct LoginScreen: View {
                         .padding(.horizontal, 16)
                         .overlay(RoundedRectangle(cornerRadius: 12).stroke(lineWidth: 1).foregroundColor(.gray))
                         
+                //pass labeltext
                 
                 ZStack(alignment: .leading) {
                             Text(placeHolderPass)
@@ -64,9 +66,9 @@ struct LoginScreen: View {
                     
                           }else if viewModel.appEventLogin == LoginEvent.Home {
                              
-                              DelayedNavigationLink(delay: .seconds(0)) {HomeScreem()}
+                        DelayedNavigationLink(delay: .seconds(0)) {HomeScreem()}
                             
-                          }
+                }
                 
             }.padding(20)
                 .alert(viewModel.errorMesagge, isPresented: $viewModel.showingAlert) {

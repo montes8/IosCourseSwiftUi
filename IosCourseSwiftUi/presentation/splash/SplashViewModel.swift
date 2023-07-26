@@ -23,7 +23,6 @@ class  SplashViewModel :ObservableObject{
     
     func getTokenTwo(){
             self.successToken = AppUseCase.getToke()
-
     }
     
 }
