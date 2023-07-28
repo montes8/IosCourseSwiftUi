@@ -22,6 +22,7 @@
 		5245F6ED2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245F6EC2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift */; };
 		528A70CB2A6EBB0E00E45CB1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A70CA2A6EBB0E00E45CB1 /* RegisterViewModel.swift */; };
 		529B428C2A7467BB00FD38CC /* IAppUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B428B2A7467BB00FD38CC /* IAppUseCase.swift */; };
+		529B42902A747A1A00FD38CC /* IUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B428F2A747A1A00FD38CC /* IUserUseCase.swift */; };
 		52A7CC8C2A6DEDFA00F4813D /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7CC8B2A6DEDFA00F4813D /* PersistenceController.swift */; };
 		52A7CC8F2A6DFAD700F4813D /* RegisterScreem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7CC8E2A6DFAD700F4813D /* RegisterScreem.swift */; };
 		52AEBFE72A671DAC00EE7775 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AEBFE62A671DAC00EE7775 /* LoginScreen.swift */; };
@@ -78,6 +79,7 @@
 		5245F6EC2A65B9CC007E4EBC /* IosCourseSwiftUiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosCourseSwiftUiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		528A70CA2A6EBB0E00E45CB1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		529B428B2A7467BB00FD38CC /* IAppUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAppUseCase.swift; sourceTree = "<group>"; };
+		529B428F2A747A1A00FD38CC /* IUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserUseCase.swift; sourceTree = "<group>"; };
 		52A7CC8B2A6DEDFA00F4813D /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		52A7CC8E2A6DFAD700F4813D /* RegisterScreem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreem.swift; sourceTree = "<group>"; };
 		52AEBFE62A671DAC00EE7775 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -206,6 +208,21 @@
 			path = userDefault;
 			sourceTree = "<group>";
 		};
+		529B428D2A7479DA00FD38CC /* database */ = {
+			isa = PBXGroup;
+			children = (
+				529B428F2A747A1A00FD38CC /* IUserUseCase.swift */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
+		529B428E2A7479E500FD38CC /* network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
 		52A7CC8A2A6DEDDE00F4813D /* manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +281,8 @@
 		52CCCD982A6834AA00A70826 /* usecases */ = {
 			isa = PBXGroup;
 			children = (
+				529B428E2A7479E500FD38CC /* network */,
+				529B428D2A7479DA00FD38CC /* database */,
 				529B428A2A74678E00FD38CC /* userDefault */,
 				52CCCD9B2A6834F700A70826 /* AppUseCase.swift */,
 				523A69B82A6D562600648710 /* UserUseCase.swift */,
@@ -602,6 +621,7 @@
 				5245F6CD2A65B9CA007E4EBC /* SplashScreen.swift in Sources */,
 				523A69B92A6D562600648710 /* UserUseCase.swift in Sources */,
 				52F4EE162A7332EF002FB485 /* Repository.swift in Sources */,
+				529B42902A747A1A00FD38CC /* IUserUseCase.swift in Sources */,
 				5245F6CB2A65B9CA007E4EBC /* IosCourseSwiftUiApp.swift in Sources */,
 				529B428C2A7467BB00FD38CC /* IAppUseCase.swift in Sources */,
 				52A7CC8C2A6DEDFA00F4813D /* PersistenceController.swift in Sources */,

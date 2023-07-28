@@ -10,16 +10,14 @@ import UIKit
 import CoreData
 
 class UserUseCase{
-   
-    static func validateUser(user : String,pass : String,context : NSManagedObjectContext)
     
-    async -> Bool{
-        return await DataBaseCourse.validateLogin(context: context,user: user,pass: pass)
+    let iUserUseCase : IUserUseCase = DataBaseCourse()
+   
+     func validateUser(user : String,pass : String,context : NSManagedObjectContext) async -> Bool{
+        return await iUserUseCase.validateLogin(context: context,user: user,pass: pass)
      }
     
-    static func registerUser(user : String,pass : String,context : NSManagedObjectContext,completion: @escaping (Bool) -> Void){
-           DataBaseCourse.saveUserEntity(context: context,user: user,pass: pass){ success in
-                              completion(success)
-        }
+     func registerUser(user : String,pass : String,context : NSManagedObjectContext) async -> Bool{
+         iUserUseCase.saveUserEntity(context: context,user: user,pass: pass)
      }
 }
