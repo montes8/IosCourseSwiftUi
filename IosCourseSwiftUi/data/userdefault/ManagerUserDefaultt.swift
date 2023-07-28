@@ -7,13 +7,13 @@
 
 import Foundation
 
-class ManagerUserDefaultt {
+internal class ManagerUserDefaultt : IAppUseCase{
     
-    static func getToken() -> Bool {
+    func getToke() -> Bool {
         return UserDefaults.standard.bool(forKey: "token")
     }
     
-    static func saveToken(token: Bool) {
+    func saveToken(token : Bool) {
         UserDefaults.standard.set(token, forKey: "token")
     }
     

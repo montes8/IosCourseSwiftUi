@@ -14,15 +14,14 @@ class  SplashViewModel :ObservableObject{
     
     @Published var successToken : Bool = false
     
-    init() {
-        getTokenTwo()
-    }
-   
+    let appUsecase = AppUseCase()
     
 
-    
+    @MainActor
     func getTokenTwo(){
-            self.successToken = AppUseCase.getToke()
+        Task {
+            self.successToken = appUsecase.getToke()
+        }
     }
     
 }

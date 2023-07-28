@@ -9,12 +9,15 @@ import Foundation
 
 class AppUseCase {
     
-    static func getToke() -> Bool{
-        return ManagerUserDefaultt.getToken()
+    let managerUserDefaultt : IAppUseCase = ManagerUserDefaultt()
+    
+
+    func getToke() -> Bool{
+        return  managerUserDefaultt.getToke()
     }
     
-    static func saveToken(){
-        ManagerUserDefaultt.saveToken(token: true)
+     func saveToken() -> Void{
+         managerUserDefaultt.saveToken(token: true)
     }
     
 }

@@ -34,6 +34,9 @@ struct SplashScreen: View {
                         .resizable()
                         .edgesIgnoringSafeArea(.all)
                 )
+        }.onAppear{
+            splashViewModel.getTokenTwo()
+            
         }
         
     }

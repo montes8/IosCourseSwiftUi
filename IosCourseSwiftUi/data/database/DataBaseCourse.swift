@@ -25,7 +25,6 @@ class DataBaseCourse {
                    return false
                 }else{
                    // completion(data,nil)
-                    ManagerUserDefaultt.saveToken(token: true)
                     return true
                 }
                
