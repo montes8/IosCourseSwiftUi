@@ -16,23 +16,24 @@ struct HomeScreem: View {
     
         NavigationView{
             VStack() {
-                List(viewModel.listRecipe, id: \.id){ model in
-                    VStack() {
-                        Spacer()
-                            HStack{
-                                    AsyncImage(url: URL(string: model.urlImg)).scaledToFill()
-                                        .frame(width: 100,height: hue)
-                                     .cornerRadius(10)
- 
-                                    VStack(alignment: .leading, spacing: 0){
-                                        Text(model.title).font(.system(size: 20,weight: .bold)).lineLimit(1).foregroundColor(.black)
-                                        Text(model.description).font(.system(size: 16,weight: .bold)).lineLimit(5).foregroundColor(.black)
-                                    }.background(Color.red)
-           
-                            }.padding(8).background(Color.blue).cornerRadius(20)
-                    }.padding(4).listRowSeparator(.hidden)
-                        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-                      
+                List(){
+                    ForEach(viewModel.listRecipe, id: \.id){model in
+                        VStack() {
+                            Spacer()
+                                HStack{
+                                        AsyncImage(url: URL(string: model.urlImg)).scaledToFill()
+                                            .frame(width: 100,height: hue)
+                                         .cornerRadius(10)
+     
+                                        VStack(alignment: .leading, spacing: 0){
+                                            Text(model.title).font(.system(size: 20,weight: .bold)).lineLimit(1).foregroundColor(.black)
+                                            Text(model.description).font(.system(size: 16,weight: .bold)).lineLimit(5).foregroundColor(.black)
+                                        }.background(Color.red)
+               
+                                }.padding(8).background(Color.blue).cornerRadius(20)
+                        }.padding(4).listRowSeparator(.hidden)
+                            .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    }
                    
                 }.scrollIndicators(ScrollIndicatorVisibility.hidden).listStyle(PlainListStyle())
             }.alert(viewModel.errorMesagge, isPresented: $viewModel.showingAlert) {
