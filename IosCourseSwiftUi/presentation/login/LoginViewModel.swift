@@ -15,6 +15,7 @@ class LoginViewModel : ObservableObject{
     @Published var showingAlert: Bool = false
     @Published var errorMesagge: String = "Ocurrio un error"
     
+    let userUseCase = UserUseCase()
    
     @Published var appEventLogin: LoginEvent = .Default {
         didSet {
@@ -32,7 +33,7 @@ class LoginViewModel : ObservableObject{
         print("logindata "+user + "  " + pass)
         Task {
             do {
-                let response = await UserUseCase.validateUser(user: user, pass: pass, context: context)
+                let response = await userUseCase.validateUser(user: user, pass: pass, context: context)
                 if response{
                     self.appEventLogin = LoginEvent.Home
                 }else{
