@@ -13,7 +13,8 @@ class RegisterViewModel : ObservableObject{
     @Published var showingAlertR: Bool = false
     @Published var errorMesaggeR: String = "Ocurrio un error"
     
-   
+    let userUseCase = UserUseCase()
+    
     @Published var appEventLogin: LoginEvent = .Register {
         didSet {
             objectWillChange.send()
@@ -27,7 +28,7 @@ class RegisterViewModel : ObservableObject{
         print("logindata "+user + "  " + pass)
         Task {
             do {
-                UserUseCase.registerUser(user: user, pass: pass, context: context) { success in
+                let success = await userUseCase.registerUser(user: user, pass: pass, context: context)
                      if success{
                          self.appEventLogin = LoginEvent.Home
                          self.showingAlertR = true
@@ -38,7 +39,6 @@ class RegisterViewModel : ObservableObject{
                          self.showingAlertR = true
                          self.errorMesaggeR = "Usuario no registrado"
                      }
-                }
             
             } catch {
                 appEventLogin = .Error

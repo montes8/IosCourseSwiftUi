@@ -23,6 +23,7 @@
 		528A70CB2A6EBB0E00E45CB1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A70CA2A6EBB0E00E45CB1 /* RegisterViewModel.swift */; };
 		529B428C2A7467BB00FD38CC /* IAppUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B428B2A7467BB00FD38CC /* IAppUseCase.swift */; };
 		529B42902A747A1A00FD38CC /* IUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B428F2A747A1A00FD38CC /* IUserUseCase.swift */; };
+		529B42942A7484DE00FD38CC /* IDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B42932A7484DE00FD38CC /* IDataUseCase.swift */; };
 		52A7CC8C2A6DEDFA00F4813D /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7CC8B2A6DEDFA00F4813D /* PersistenceController.swift */; };
 		52A7CC8F2A6DFAD700F4813D /* RegisterScreem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7CC8E2A6DFAD700F4813D /* RegisterScreem.swift */; };
 		52AEBFE72A671DAC00EE7775 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AEBFE62A671DAC00EE7775 /* LoginScreen.swift */; };
@@ -80,6 +81,7 @@
 		528A70CA2A6EBB0E00E45CB1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		529B428B2A7467BB00FD38CC /* IAppUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAppUseCase.swift; sourceTree = "<group>"; };
 		529B428F2A747A1A00FD38CC /* IUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserUseCase.swift; sourceTree = "<group>"; };
+		529B42932A7484DE00FD38CC /* IDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDataUseCase.swift; sourceTree = "<group>"; };
 		52A7CC8B2A6DEDFA00F4813D /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		52A7CC8E2A6DFAD700F4813D /* RegisterScreem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreem.swift; sourceTree = "<group>"; };
 		52AEBFE62A671DAC00EE7775 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		529B428E2A7479E500FD38CC /* network */ = {
 			isa = PBXGroup;
 			children = (
+				529B42932A7484DE00FD38CC /* IDataUseCase.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				52CCCD972A6826DB00A70826 /* SplashViewModel.swift in Sources */,
 				5245F6CD2A65B9CA007E4EBC /* SplashScreen.swift in Sources */,
 				523A69B92A6D562600648710 /* UserUseCase.swift in Sources */,
+				529B42942A7484DE00FD38CC /* IDataUseCase.swift in Sources */,
 				52F4EE162A7332EF002FB485 /* Repository.swift in Sources */,
 				529B42902A747A1A00FD38CC /* IUserUseCase.swift in Sources */,
 				5245F6CB2A65B9CA007E4EBC /* IosCourseSwiftUiApp.swift in Sources */,

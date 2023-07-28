@@ -9,11 +9,12 @@ import Foundation
 
 class DataUseCase {
     
-    static func getList()async throws -> ([RecipesModel]?, String?){
+    let iDataUseCase : IDataUseCase = Repository()
+    
+    func getList()async throws -> ([RecipesModel]?, String?){
         
-        var response = try await Repository.requestService(method: .get,params: nil,
+        var response = try await iDataUseCase.requestService(method: .get,params: nil,
                                                 header: nil,interceptor: nil,type: [RecipesResponse].self)
-        
         return (RecipesResponse.loadListRecipe(response: response.0 ?? []),response.1)
     }
 }

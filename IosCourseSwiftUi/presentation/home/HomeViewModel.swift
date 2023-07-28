@@ -13,12 +13,14 @@ class HomeViewModel : ObservableObject{
     @Published var errorMesagge: String = "Ocurrio un error"
     @Published var listRecipe: [RecipesModel] = []
     
+    let dataUseCase = DataUseCase()
+    
 
     @MainActor // MainActor es un singleton que ejecuta código en el hilo principal.
     func loadListRecipes() {
         Task {
             do {
-                let response = try await DataUseCase.getList()
+                let response = try await dataUseCase.getList()
                 if response.0 != nil{
                     print(response)
                     self.listRecipe = response.0 ?? []

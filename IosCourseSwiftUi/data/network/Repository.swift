@@ -8,11 +8,10 @@
 import Foundation
 import Alamofire
 
-class Repository{
+internal class Repository : IDataUseCase{
+   
     
-    
-    static func requestService<T: Decodable>(
-                                               method: HTTPMethod,
+    func requestService<T: Decodable>( method: HTTPMethod,
                                                params: Parameters?,
                                                header: HTTPHeaders?,
                                                interceptor: RequestInterceptor?,
