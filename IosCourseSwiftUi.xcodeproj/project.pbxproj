@@ -29,6 +29,11 @@
 		52CCCD9C2A6834F800A70826 /* AppUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCCD9B2A6834F700A70826 /* AppUseCase.swift */; };
 		52CCCD9F2A68354B00A70826 /* ManagerUserDefaultt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCCD9E2A68354B00A70826 /* ManagerUserDefaultt.swift */; };
 		52CCCDAB2A68593000A70826 /* HomeScreem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCCDAA2A68593000A70826 /* HomeScreem.swift */; };
+		52F4EE132A733276002FB485 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4EE122A733276002FB485 /* HomeViewModel.swift */; };
+		52F4EE162A7332EF002FB485 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4EE152A7332EF002FB485 /* Repository.swift */; };
+		52F4EE182A7337DD002FB485 /* DataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4EE172A7337DD002FB485 /* DataUseCase.swift */; };
+		52F4EE1A2A733828002FB485 /* RecipesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4EE192A733828002FB485 /* RecipesModel.swift */; };
+		52F4EE1D2A73386E002FB485 /* RecipesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4EE1C2A73386E002FB485 /* RecipesResponse.swift */; };
 		52F95E1B2A6715E30094DCD9 /* background_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F95E1A2A6715E30094DCD9 /* background_splash.png */; };
 		66A5736CADABBEEBBDDDBDA6 /* Pods_IosCourseSwiftUiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95BFD95D9369C176C467B5B /* Pods_IosCourseSwiftUiTests.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +84,11 @@
 		52CCCD9B2A6834F700A70826 /* AppUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUseCase.swift; sourceTree = "<group>"; };
 		52CCCD9E2A68354B00A70826 /* ManagerUserDefaultt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerUserDefaultt.swift; sourceTree = "<group>"; };
 		52CCCDAA2A68593000A70826 /* HomeScreem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreem.swift; sourceTree = "<group>"; };
+		52F4EE122A733276002FB485 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		52F4EE152A7332EF002FB485 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		52F4EE172A7337DD002FB485 /* DataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUseCase.swift; sourceTree = "<group>"; };
+		52F4EE192A733828002FB485 /* RecipesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesModel.swift; sourceTree = "<group>"; };
+		52F4EE1C2A73386E002FB485 /* RecipesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesResponse.swift; sourceTree = "<group>"; };
 		52F95E1A2A6715E30094DCD9 /* background_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_splash.png; sourceTree = "<group>"; };
 		663507D0AA9374DDE8F655DA /* Pods-IosCourseSwiftUi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosCourseSwiftUi.debug.xcconfig"; path = "Target Support Files/Pods-IosCourseSwiftUi/Pods-IosCourseSwiftUi.debug.xcconfig"; sourceTree = "<group>"; };
 		9164827100F6DE236A6D6160 /* Pods_IosCourseSwiftUi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosCourseSwiftUi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +256,7 @@
 			children = (
 				52CCCD9B2A6834F700A70826 /* AppUseCase.swift */,
 				523A69B82A6D562600648710 /* UserUseCase.swift */,
+				52F4EE172A7337DD002FB485 /* DataUseCase.swift */,
 			);
 			path = usecases;
 			sourceTree = "<group>";
@@ -253,6 +264,7 @@
 		52CCCD992A6834B700A70826 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				52F4EE142A7332B8002FB485 /* network */,
 				523A69B52A6D556D00648710 /* database */,
 				52CCCD9D2A68353200A70826 /* userdefault */,
 			);
@@ -262,6 +274,7 @@
 		52CCCD9A2A6834C900A70826 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				52F4EE192A733828002FB485 /* RecipesModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -278,8 +291,26 @@
 			isa = PBXGroup;
 			children = (
 				52CCCDAA2A68593000A70826 /* HomeScreem.swift */,
+				52F4EE122A733276002FB485 /* HomeViewModel.swift */,
 			);
 			path = home;
+			sourceTree = "<group>";
+		};
+		52F4EE142A7332B8002FB485 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				52F4EE1B2A733859002FB485 /* response */,
+				52F4EE152A7332EF002FB485 /* Repository.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		52F4EE1B2A733859002FB485 /* response */ = {
+			isa = PBXGroup;
+			children = (
+				52F4EE1C2A73386E002FB485 /* RecipesResponse.swift */,
+			);
+			path = response;
 			sourceTree = "<group>";
 		};
 		A9DF1D5612B39B707511EA09 /* Pods */ = {
@@ -546,15 +577,20 @@
 			files = (
 				52CCCDAB2A68593000A70826 /* HomeScreem.swift in Sources */,
 				528A70CB2A6EBB0E00E45CB1 /* RegisterViewModel.swift in Sources */,
+				52F4EE1A2A733828002FB485 /* RecipesModel.swift in Sources */,
 				52A7CC8F2A6DFAD700F4813D /* RegisterScreem.swift in Sources */,
+				52F4EE182A7337DD002FB485 /* DataUseCase.swift in Sources */,
+				52F4EE132A733276002FB485 /* HomeViewModel.swift in Sources */,
 				5245F6D72A65B9CC007E4EBC /* IosCourseSwiftUi.xcdatamodeld in Sources */,
 				52AEBFE72A671DAC00EE7775 /* LoginScreen.swift in Sources */,
 				52AEBFEA2A6723C200EE7775 /* DelayedNavigationLink.swift in Sources */,
 				523A69B72A6D558400648710 /* DataBaseCourse.swift in Sources */,
+				52F4EE1D2A73386E002FB485 /* RecipesResponse.swift in Sources */,
 				52CCCD9C2A6834F800A70826 /* AppUseCase.swift in Sources */,
 				52CCCD972A6826DB00A70826 /* SplashViewModel.swift in Sources */,
 				5245F6CD2A65B9CA007E4EBC /* SplashScreen.swift in Sources */,
 				523A69B92A6D562600648710 /* UserUseCase.swift in Sources */,
+				52F4EE162A7332EF002FB485 /* Repository.swift in Sources */,
 				5245F6CB2A65B9CA007E4EBC /* IosCourseSwiftUiApp.swift in Sources */,
 				52A7CC8C2A6DEDFA00F4813D /* PersistenceController.swift in Sources */,
 				523A69B32A6D493D00648710 /* LoginViewModel.swift in Sources */,
