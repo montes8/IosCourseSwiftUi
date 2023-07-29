@@ -9,7 +9,7 @@ import Foundation
 
 class DataUseCase {
     
-    let iDataUseCase : IDataUseCase = Repository()
+    @Inject private var iDataUseCase: IDataUseCase
     
     func getList()async throws -> ([RecipesModel]?, String?){
         

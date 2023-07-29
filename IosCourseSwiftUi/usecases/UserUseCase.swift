@@ -11,7 +11,7 @@ import CoreData
 
 class UserUseCase{
     
-    let iUserUseCase : IUserUseCase = DataBaseCourse()
+    @Inject private var iUserUseCase: IUserUseCase
    
      func validateUser(user : String,pass : String,context : NSManagedObjectContext) async -> Bool{
         return await iUserUseCase.validateUser(user: user,pass: pass,context: context)
