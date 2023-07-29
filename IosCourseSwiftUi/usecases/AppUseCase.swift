@@ -9,9 +9,8 @@ import Foundation
 
 class AppUseCase {
     
-    let managerUserDefaultt : IAppUseCase = ManagerUserDefaultt()
+    @Inject private var managerUserDefaultt: IAppUseCase
     
-
     func getToke() -> Bool{
         return  managerUserDefaultt.getToke()
     }

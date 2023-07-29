@@ -7,6 +7,9 @@
 
 import Foundation
 import CoreData
+import Swinject
+import SwinjectAutoregistration
+
 
 struct PersistenceController {
     // singleton instancia que se usara en toda la app
@@ -52,3 +55,62 @@ struct PersistenceController {
            
     }
 }
+
+@propertyWrapper
+struct Inject<Component> {
+    
+    var component: Component
+    
+    init() {
+        self.component = Resolver.shared.resolve(Component.self)
+    }
+    
+    public var wrappedValue:Component {
+        get { return component }
+        mutating set { component = newValue }
+    }
+}
+
+
+class Resolver {
+  
+    static let shared = Resolver()
+    
+    private var assembler: Assembler
+
+    init() {
+        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+            self.assembler = Assembler([])
+        } else {
+            
+            self.assembler = Assembler(
+                [RepositoriesAssembly()]
+            )
+        }
+    }
+
+    func resolve<Component>(_ type: Component.Type) -> Component {
+        guard let component = assembler.resolver.resolve(Component.self) else {
+            fatalError("\(String(describing:Component.self)) not found in resolver.")
+        }
+        return component
+    }
+}
+
+public class RepositoriesAssembly: Assembly {
+    
+    public init(){}
+    
+    public func assemble(container: Container) {
+        assembleRepositories(in: container)
+    }
+    
+    private func assembleRepositories(in container: Container) {
+        
+        container.autoregister(IAppUseCase.self, initializer: ManagerUserDefaultt.init)
+        container.autoregister(IUserUseCase.self, initializer: DataBaseCourse.init)
+        container.autoregister(IDataUseCase.self, initializer: Repository.init)
+    }
+    
+}
+
