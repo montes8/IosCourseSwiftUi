@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2626B45DA7BEBF71A43B40F9 /* Pods_IosCourseSwiftUi_IosCourseSwiftUiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D97E5DF7A5317B176E800E /* Pods_IosCourseSwiftUi_IosCourseSwiftUiUITests.framework */; };
 		2F40616CC9F89EAE3A4EA616 /* Pods_IosCourseSwiftUi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9164827100F6DE236A6D6160 /* Pods_IosCourseSwiftUi.framework */; };
+		5217877B2A7BEA6100CA6223 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5217877A2A7BEA6100CA6223 /* Components.swift */; };
 		5233073C2A785DF0003AB0EF /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5233073B2A785DF0003AB0EF /* Inject.swift */; };
 		5233073E2A785E10003AB0EF /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5233073D2A785E10003AB0EF /* Resolver.swift */; };
 		523307402A785E5C003AB0EF /* RepositoriesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5233073F2A785E5C003AB0EF /* RepositoriesModule.swift */; };
@@ -71,6 +72,7 @@
 		3003ED4BBEBD205C0415EBFF /* Pods-IosCourseSwiftUiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosCourseSwiftUiTests.debug.xcconfig"; path = "Target Support Files/Pods-IosCourseSwiftUiTests/Pods-IosCourseSwiftUiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C1798DB98CD0B122FC47DF2 /* Pods-IosCourseSwiftUi-IosCourseSwiftUiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosCourseSwiftUi-IosCourseSwiftUiUITests.release.xcconfig"; path = "Target Support Files/Pods-IosCourseSwiftUi-IosCourseSwiftUiUITests/Pods-IosCourseSwiftUi-IosCourseSwiftUiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		50A777022D62899A37A4240D /* Pods-IosCourseSwiftUi-IosCourseSwiftUiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosCourseSwiftUi-IosCourseSwiftUiUITests.debug.xcconfig"; path = "Target Support Files/Pods-IosCourseSwiftUi-IosCourseSwiftUiUITests/Pods-IosCourseSwiftUi-IosCourseSwiftUiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5217877A2A7BEA6100CA6223 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		5233073B2A785DF0003AB0EF /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 		5233073D2A785E10003AB0EF /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		5233073F2A785E5C003AB0EF /* RepositoriesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesModule.swift; sourceTree = "<group>"; };
@@ -144,6 +146,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		521787792A7BEA4400CA6223 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				52AEBFE92A6723C200EE7775 /* DelayedNavigationLink.swift */,
+				5217877A2A7BEA6100CA6223 /* Components.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		5233073A2A785DBC003AB0EF /* di */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +198,7 @@
 		5245F6C92A65B9C9007E4EBC /* IosCourseSwiftUi */ = {
 			isa = PBXGroup;
 			children = (
+				521787792A7BEA4400CA6223 /* components */,
 				5233073A2A785DBC003AB0EF /* di */,
 				52CCCD9A2A6834C900A70826 /* model */,
 				52CCCD992A6834B700A70826 /* data */,
@@ -341,7 +353,6 @@
 			isa = PBXGroup;
 			children = (
 				52A7CC8A2A6DEDDE00F4813D /* manager */,
-				52AEBFE92A6723C200EE7775 /* DelayedNavigationLink.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -691,6 +702,7 @@
 				52AEBFEA2A6723C200EE7775 /* DelayedNavigationLink.swift in Sources */,
 				523A69B72A6D558400648710 /* DataBaseCourse.swift in Sources */,
 				523307402A785E5C003AB0EF /* RepositoriesModule.swift in Sources */,
+				5217877B2A7BEA6100CA6223 /* Components.swift in Sources */,
 				52F4EE1D2A73386E002FB485 /* RecipesResponse.swift in Sources */,
 				529E08722A7B2B7C0046B176 /* UseCaseModule.swift in Sources */,
 				52CCCD9C2A6834F800A70826 /* AppUseCase.swift in Sources */,
