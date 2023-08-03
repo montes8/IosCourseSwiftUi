@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HomeScreem: View {
     
-    @StateObject var viewModel: HomeViewModel = HomeViewModel()
+    //@StateObject var viewModel: HomeViewModel = HomeViewModel()
+    
+    @EnvironmentObject var viewModel: HomeViewModel
     
     var body: some View {
     
@@ -33,7 +35,7 @@ struct HomeScreem: View {
                             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                    
                 }.scrollIndicators(ScrollIndicatorVisibility.hidden).listStyle(PlainListStyle())
-            }.alert(viewModel.errorMesagge, isPresented: $viewModel.showingAlert) {
+            }.alert(viewModel.errorMesagge, isPresented: .constant(viewModel.showingAlert)) {
                 Button("Aceptar", role: .cancel) { }
             }
           

@@ -17,7 +17,9 @@ struct LoginScreen: View {
     let placeHolderPass: String = "contraseña"
     @State var textValuePass: String = "Tayler"
     
-    @ObservedObject var viewModel: LoginViewModel = LoginViewModel()
+    //@ObservedObject var viewModel: LoginViewModel = LoginViewModel()
+    //@Inject var viewModel: LoginViewModel
+    @EnvironmentObject var viewModel: LoginViewModel
     
     var body: some View {
         NavigationView{
@@ -37,21 +39,16 @@ struct LoginScreen: View {
                 .cornerRadius(25).foregroundColor(.blue)
                 if viewModel.appEventLogin == LoginEvent.Register {
                               DelayedNavigationLink(delay: .seconds(0)) {RegisterScreem()}
-                    
-                          }else if viewModel.appEventLogin == LoginEvent.Home {
-                             
-                        DelayedNavigationLink(delay: .seconds(0)) {HomeScreem()}
+                 }else if viewModel.appEventLogin == LoginEvent.Home {
+                            DelayedNavigationLink(delay: .seconds(0)) {HomeScreem()}
                             
-                }
+                 }
                 
             }.padding(20)
                 .alert(viewModel.errorMesagge, isPresented: $viewModel.showingAlert) {
                     Button("Aceptar", role: .cancel) {
                     }
                 }
-            
-          
-                     
         }.navigationTitle("").navigationBarBackButtonHidden(true)
         
     }

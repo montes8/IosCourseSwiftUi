@@ -18,7 +18,9 @@ struct RegisterScreem: View {
     let placeHolderPassR: String = "contraseña"
     @State var textValuePassR: String = "Tayler"
     
-    @StateObject var viewModel: RegisterViewModel = RegisterViewModel()
+    //@StateObject var viewModel: RegisterViewModel = RegisterViewModel()
+    //@Inject var viewModel: RegisterViewModel
+    @EnvironmentObject var viewModel: RegisterViewModel
     
     var body: some View {
         NavigationView{
@@ -53,7 +55,7 @@ struct RegisterScreem: View {
                     .cornerRadius(25).foregroundColor(.white)
                 
             }.padding(20)
-                .alert(viewModel.errorMesaggeR, isPresented: $viewModel.showingAlertR) {
+                .alert(viewModel.errorMesaggeR, isPresented: .constant(viewModel.showingAlertR)) {
                             Button("Aceptar", role: .cancel) {
                                 if viewModel.appEventLogin == LoginEvent.Home {
                                     presentationMode.wrappedValue.dismiss()

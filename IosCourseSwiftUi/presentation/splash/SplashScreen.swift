@@ -12,7 +12,7 @@ struct SplashScreen: View {
     
     
     //@ObservedObject var splashViewModel = SplashViewModel()
-    @Inject var splashViewModel: SplashViewModel
+    @EnvironmentObject var viewModel: SplashViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
