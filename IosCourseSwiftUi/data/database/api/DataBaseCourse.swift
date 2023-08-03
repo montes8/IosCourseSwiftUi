@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 
-internal class DataBaseCourse : IUserUseCase{
+internal class DataBaseCourse : IDataBaseCourse{
     func validateUser(user: String, pass: String, context: NSManagedObjectContext) async -> Bool {
         let fetchRequest : NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
        let query = [NSPredicate(format: "name == %@", user),NSPredicate(format: "password == %@", pass)]

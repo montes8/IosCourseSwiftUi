@@ -15,7 +15,8 @@ class LoginViewModel : ObservableObject{
     @Published var showingAlert: Bool = false
     @Published var errorMesagge: String = "Ocurrio un error"
     
-    let userUseCase = UserUseCase()
+    @Inject private var userUseCase: IUserUseCase
+    
    
     @Published var appEventLogin: LoginEvent = .Default {
         didSet {

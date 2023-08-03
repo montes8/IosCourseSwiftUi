@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal class ManagerUserDefaultt : IAppUseCase{
+internal class ManagerUserDefaultt : IManagerUserDefault{
     
     func getToke() -> Bool {
         return UserDefaults.standard.bool(forKey: "token")

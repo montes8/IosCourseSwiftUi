@@ -9,11 +9,7 @@ import Foundation
 import Alamofire
 
 
-public protocol IDataUseCase {
+protocol IDataUseCase {
     
-    func requestService<T: Decodable>( method: HTTPMethod,
-                                               params: Parameters?,
-                                               header: HTTPHeaders?,
-                                               interceptor: RequestInterceptor?,
-                                               type: T.Type) async throws -> (T?, String?) 
+    func getList() async throws -> ([RecipesModel]?, String?)
 }

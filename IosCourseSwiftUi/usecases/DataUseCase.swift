@@ -7,13 +7,13 @@
 
 import Foundation
 
-class DataUseCase {
-    
-    @Inject private var iDataUseCase: IDataUseCase
+class DataUseCase : IDataUseCase{
+   
+    @Inject private var iRepository: IRepository
     
     func getList()async throws -> ([RecipesModel]?, String?){
         
-        var response = try await iDataUseCase.requestService(method: .get,params: nil,
+        var response = try await iRepository.requestService(method: .get,params: nil,
                                                 header: nil,interceptor: nil,type: [RecipesResponse].self)
         return (RecipesResponse.loadListRecipe(response: response.0 ?? []),response.1)
     }

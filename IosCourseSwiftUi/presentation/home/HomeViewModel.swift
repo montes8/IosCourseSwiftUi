@@ -13,7 +13,8 @@ class HomeViewModel : ObservableObject{
     @Published var errorMesagge: String = "Ocurrio un error"
     @Published var listRecipe: [RecipesModel] = []
     
-    let dataUseCase = DataUseCase()
+
+    @Inject private var dataUseCase: IDataUseCase
     
 
     @MainActor // MainActor es un singleton que ejecuta código en el hilo principal.

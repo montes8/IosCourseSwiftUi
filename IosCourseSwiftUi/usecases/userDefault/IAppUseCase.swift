@@ -11,6 +11,6 @@ public protocol IAppUseCase {
     
      func getToke() -> Bool
     
-     func saveToken(token : Bool) -> Void
+     func saveToken()
 }
 

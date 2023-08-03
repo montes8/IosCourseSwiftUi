@@ -7,16 +7,16 @@
 
 import Foundation
 
-class AppUseCase {
+class AppUseCase : IAppUseCase{
     
-    @Inject private var managerUserDefaultt: IAppUseCase
+    @Inject private var managerUserDefaultt: IManagerUserDefault
+    
+    func saveToken() {
+        managerUserDefaultt.saveToken(token: true)
+    }
     
     func getToke() -> Bool{
         return  managerUserDefaultt.getToke()
-    }
-    
-     func saveToken() -> Void{
-         managerUserDefaultt.saveToken(token: true)
     }
     
 }

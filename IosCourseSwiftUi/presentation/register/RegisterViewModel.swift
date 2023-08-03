@@ -13,7 +13,7 @@ class RegisterViewModel : ObservableObject{
     @Published var showingAlertR: Bool = false
     @Published var errorMesaggeR: String = "Ocurrio un error"
     
-    let userUseCase = UserUseCase()
+    @Inject private var userUseCase: IUserUseCase
     
     @Published var appEventLogin: LoginEvent = .Register {
         didSet {

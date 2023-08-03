@@ -12,13 +12,12 @@ class  SplashViewModel :ObservableObject{
    
     @Published var successToken : Bool = false
     
-    let appUsecase = AppUseCase()
+    @Inject private var appUseCase: IAppUseCase
     
-
     @MainActor
     func getTokenTwo(){
         Task {
-            self.successToken = appUsecase.getToke()
+            self.successToken = appUseCase.getToke()
         }
     }
     

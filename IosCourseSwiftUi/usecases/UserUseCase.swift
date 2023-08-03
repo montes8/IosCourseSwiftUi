@@ -9,15 +9,15 @@ import Foundation
 import UIKit
 import CoreData
 
-class UserUseCase{
+class UserUseCase : IUserUseCase {
     
-    @Inject private var iUserUseCase: IUserUseCase
+    @Inject private var iDataBaseCourse: IDataBaseCourse
    
      func validateUser(user : String,pass : String,context : NSManagedObjectContext) async -> Bool{
-        return await iUserUseCase.validateUser(user: user,pass: pass,context: context)
+        return await iDataBaseCourse.validateUser(user: user,pass: pass,context: context)
      }
     
      func registerUser(user : String,pass : String,context : NSManagedObjectContext) async -> Bool{
-         return await iUserUseCase.registerUser(user: user,pass: pass,context: context)
+         return await iDataBaseCourse.registerUser(user: user,pass: pass,context: context)
      }
 }
