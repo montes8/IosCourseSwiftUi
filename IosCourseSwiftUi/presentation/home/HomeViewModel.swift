@@ -19,6 +19,11 @@ class HomeViewModel : ObservableObject{
 
     @MainActor // MainActor es un singleton que ejecuta código en el hilo principal.
     func loadListRecipes() {
+        
+        guard listRecipe.isEmpty else {
+            return
+        }
+        
         Task {
             do {
                 let response = try await dataUseCase.getList()

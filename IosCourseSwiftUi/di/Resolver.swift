@@ -20,7 +20,7 @@ class Resolver {
         } else {
             
             self.assembler = Assembler(
-                [RepositoriesModule(),UseCaseModule()]
+                [RepositoriesModule(),UseCaseModule(),ViewModelModule()]
             )
         }
     }

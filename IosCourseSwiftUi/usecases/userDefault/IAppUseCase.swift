@@ -9,8 +9,8 @@ import Foundation
 
 public protocol IAppUseCase {
     
-     func getToke() -> Bool
+    @Sendable func getToke() -> Bool
     
-     func saveToken()
+    @Sendable func saveToken()
 }
 

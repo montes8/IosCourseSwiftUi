@@ -8,7 +8,7 @@
 import Foundation
 
 
-class  SplashViewModel :ObservableObject{
+final class  SplashViewModel :ObservableObject{
    
     @Published var successToken : Bool = false
     

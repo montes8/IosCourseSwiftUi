@@ -11,7 +11,8 @@ import CoreData
 struct SplashScreen: View {
     
     
-    @ObservedObject var splashViewModel = SplashViewModel()
+    //@ObservedObject var splashViewModel = SplashViewModel()
+    @Inject var splashViewModel: SplashViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {

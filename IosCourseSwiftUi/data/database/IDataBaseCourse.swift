@@ -10,8 +10,8 @@ import CoreData
 
 public protocol IDataBaseCourse {
     
-    func validateUser(user : String,pass : String,context : NSManagedObjectContext) async -> Bool
+    @Sendable func validateUser(user : String,pass : String,context : NSManagedObjectContext) async -> Bool
     
-    func registerUser(user : String,pass : String,context : NSManagedObjectContext) async -> Bool
+    @Sendable func registerUser(user : String,pass : String,context : NSManagedObjectContext) async -> Bool
      
 }

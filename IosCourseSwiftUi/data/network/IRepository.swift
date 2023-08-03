@@ -10,7 +10,7 @@ import Alamofire
 
 public protocol IRepository {
     
-    func requestService<T: Decodable>( method: HTTPMethod,
+    @Sendable func requestService<T: Decodable>( method: HTTPMethod,
                                                params: Parameters?,
                                                header: HTTPHeaders?,
                                                interceptor: RequestInterceptor?,

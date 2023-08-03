@@ -9,7 +9,7 @@ import Foundation
 
 public protocol IManagerUserDefault {
     
-     func getToke() -> Bool
+    @Sendable func getToke() -> Bool
     
-     func saveToken(token : Bool) -> Void
+    @Sendable func saveToken(token : Bool) -> Void
 }

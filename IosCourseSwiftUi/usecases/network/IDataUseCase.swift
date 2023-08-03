@@ -11,5 +11,5 @@ import Alamofire
 
 protocol IDataUseCase {
     
-    func getList() async throws -> ([RecipesModel]?, String?)
+    @Sendable func getList() async throws -> ([RecipesModel]?, String?)
 }
