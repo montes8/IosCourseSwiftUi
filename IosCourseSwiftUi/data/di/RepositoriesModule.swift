@@ -16,7 +16,6 @@ public class RepositoriesModule: Assembly {
     }
     
     private func assembleRepositories(in container: Container) {
-        
         container.autoregister(IManagerUserDefault.self, initializer: ManagerUserDefaultt.init)
         container.autoregister(IDataBaseCourse.self, initializer: DataBaseCourse.init)
         container.autoregister(IRepository.self, initializer: Repository.init)

@@ -18,7 +18,6 @@ class Resolver {
         if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
             self.assembler = Assembler([])
         } else {
-            
             self.assembler = Assembler(
                 [RepositoriesModule(),UseCaseModule(),ViewModelModule()]
             )

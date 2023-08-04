@@ -16,7 +16,7 @@ class LoginViewModel : ObservableObject{
     @Published var errorMesagge: String = "Ocurrio un error"
     
     @Inject private var userUseCase: IUserUseCase
-    @Inject private var appUseCase: IAppUseCase
+    @Inject private var appLoginUseCase: IAppUseCase
    
     @Published var appEventLogin: LoginEvent = .Default {
         didSet {
@@ -36,7 +36,7 @@ class LoginViewModel : ObservableObject{
             do {
                 let response = await userUseCase.validateUser(user: user, pass: pass, context: context)
                 if response{
-                    appUseCase.saveToken()
+                    appLoginUseCase.saveToken()
                     self.appEventLogin = LoginEvent.Home
                 }else{
                     self.appEventLogin = LoginEvent.Error
