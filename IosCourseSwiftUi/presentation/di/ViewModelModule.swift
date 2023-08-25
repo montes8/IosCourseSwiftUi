@@ -15,8 +15,7 @@ public class ViewModelModule: Assembly {
     
     public func assemble(container: Container) {
         
-        container.autoregister(SplashViewModel.self, initializer: SplashViewModel.init)
-            .inObjectScope(.container)
+        container.autoregister(SplashViewModel.self, initializer: SplashViewModel.init).inObjectScope(.container)
         container.autoregister(LoginViewModel.self, initializer: LoginViewModel.init)
             .inObjectScope(.container)
         container.autoregister(RegisterViewModel.self, initializer: RegisterViewModel.init)

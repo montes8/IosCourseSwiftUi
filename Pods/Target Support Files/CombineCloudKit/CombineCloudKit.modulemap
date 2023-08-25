@@ -1,0 +1,6 @@
+framework module CombineCloudKit {
+  umbrella header "CombineCloudKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

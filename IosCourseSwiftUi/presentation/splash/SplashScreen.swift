@@ -16,7 +16,6 @@ struct SplashScreen: View {
     @EnvironmentObject var splashViewModel: SplashViewModel
     
     var body: some View {
-        
         NavigationView {
             VStack(spacing: 16) {
                 Text("FOOD MERIA").font(.system(size: 25,weight: .bold)).foregroundColor(.white)
@@ -38,16 +37,10 @@ struct SplashScreen: View {
                 )
         }.onAppear{
             splashViewModel.getTokenTwo()
-            
         }
         
     }
 }
-
-
-
-
-
 
 
 struct ContentView_Previews: PreviewProvider {

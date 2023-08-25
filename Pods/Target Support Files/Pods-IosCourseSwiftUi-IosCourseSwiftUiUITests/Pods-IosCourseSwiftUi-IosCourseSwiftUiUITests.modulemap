@@ -1,0 +1,6 @@
+framework module Pods_IosCourseSwiftUi_IosCourseSwiftUiUITests {
+  umbrella header "Pods-IosCourseSwiftUi-IosCourseSwiftUiUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
