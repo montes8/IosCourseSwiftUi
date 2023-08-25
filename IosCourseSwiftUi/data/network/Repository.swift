@@ -18,7 +18,7 @@ class Repository{
                                                interceptor: RequestInterceptor?,
                                                type: T.Type) async throws -> (T?, String?)  {
 
-       let urlService = "https://972e-2800-200-e3c0-1123-943a-eb7f-223a-fe08.ngrok-free.app/api/user/loadRecipes"
+       let urlService = "https://d9a5-2800-200-e3c0-1123-484c-49cf-9d59-6617.ngrok-free.app/service/user/loadRecipes"
         
         return try await withCheckedThrowingContinuation { continuation in
             
